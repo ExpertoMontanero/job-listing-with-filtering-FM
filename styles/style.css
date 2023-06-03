@@ -1,0 +1,164 @@
+/* FONT  weights (500,700)*/
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+/* COLORS PALLETE */
+:root {
+    --dark-cyan: hsl(180, 29%, 50%);
+    --background-color: hsl(180, 52%, 96%);
+    --filter-tablets-color: hsl(180, 31%, 95%);
+    --dark-grayish-cyan: hsl(180, 8%, 52%);
+    --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+    font-family: 'League Spartan', sans-serif;
+}
+
+img {
+    display: block;
+}
+
+/* --------------------------------------- */
+/*                  HEADER                 */
+/* --------------------------------------- */
+#header {
+    background-image: url('../images/bg-header-desktop.svg');
+    background-color: var(--dark-cyan);
+    height: 150px;
+}
+
+/* --------------------------------------- */
+/*                MAIN SECTION             */
+/* --------------------------------------- */
+#main-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+    height: fit-content;
+
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 82%;
+    height: 10em;
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 12px 0px rgba(177, 207, 210, 1);
+    -moz-box-shadow: 0px 9px 12px 0px rgba(177, 207, 210, 1);
+    box-shadow: 0px 9px 12px 0px rgba(177, 207, 210, 1);
+}
+
+.inside-box {
+    width: 94%;
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* BUTTONS */
+
+button {
+    font: inherit;
+    border: none;
+    margin-left: 0.6em;
+    margin: 0.6em 0 0.6em 0.6em;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: var(--filter-tablets-color);
+    color: var(--dark-cyan);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--dark-cyan);
+    color: var(--filter-tablets-color);
+}
+
+
+/* --------------------------------------- */
+/*                  LEFT PART              */
+/* --------------------------------------- */
+
+.left-part {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.row {
+    margin: 0.8em 0;
+}
+
+/* FIRST ROW */
+
+.first-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.brand {
+    font-size: 18px;
+    color: var(--dark-cyan);
+}
+
+/* labels customization */
+.special-label {
+    font-size: 14px;
+    color: var(--filter-tablets-color);
+    padding: 6px;
+    border-radius: 20px;
+}
+
+.new-label {
+    background-color: var(--dark-cyan);
+}
+
+.featured-label {
+    background-color: var(--very-dark-grayish-cyan);
+}
+
+/* SECOND ROW */
+
+.title {
+    color: var(--very-dark-grayish-cyan);
+}
+
+/* THIRD ROW */
+.third-row {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    color: var(--dark-grayish-cyan);
+}
+
+hr {
+    width: 5px;
+    border-width: 4px;
+    border-color: var(--dark-grayish-cyan);
+    margin: 0 0.8em;
+    border-style: dotted;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
