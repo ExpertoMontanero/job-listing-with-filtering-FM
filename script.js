@@ -6,7 +6,7 @@ fetch('data.json')
         json.forEach(json =>
             $('#main-section').append(
                 ` 
-        <div class="box">
+        <div class="box ${cardBorder(json.featured)}">
             <div class="inside-box">
                 <div class="left-part">
                     <img src="${json.logo}" class="logo" alt="logo">
@@ -38,7 +38,6 @@ fetch('data.json')
             </div>
         </div>
     `)
-
         );
     });
 
@@ -65,23 +64,31 @@ const createButtons = (component, type) => {
         if (Array.isArray(component)) {
             component.forEach(element => {
                 if (type == 'languages') {
-                    post += `<button class="languages"> ${element}</button>`
+                    post += `<button class="filter-button languages"> ${element}</button>`
                 }
                 if (type == 'tools') {
-                    post += `<button class="tools"> ${element}</button>`
+                    post += `<button class="filter-button  tools"> ${element}</button>`
                 }
             });
             return post;
         }
         else if (type == 'role') {
             let post = '';
-            post = `<button class="role"> ${component}</button>`
+            post = `<button class="filter-button role"> ${component}</button>`
             return post;
         }
         else if (type == 'level') {
             let post = '';
-            post = `<button class="level"> ${component}</button>`
+            post = `<button class="filter-button level"> ${component}</button>`
             return post;
         }
     }
 }
+
+//ADDING (FEATURED LABEL) WRAPPING BORDER 
+const cardBorder = (featured) => {
+    if (featured) {
+        return "featured-border";
+    }
+};
+
