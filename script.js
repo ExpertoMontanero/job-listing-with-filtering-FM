@@ -3,6 +3,8 @@ let data = '';
 fetch('data.json')
     .then(response => response.json())
     .then(json => {
+
+
         json.forEach(json =>
             $('#main-section').append(
                 ` 
@@ -29,11 +31,10 @@ fetch('data.json')
                     </div>
                 </div>
                 <div class="right-part">
-                    <button>Frontend</button>
-                    <button>Senior</button>
-                    <button>HTML</button>
-                    <button>CSS</button>
-                    <button>Java Script</button>
+                    ${createButtons(json.role, 'role')} 
+                    ${createButtons(json.level, 'level')}
+                    ${createButtons(json.languages, 'languages')}
+                    ${createButtons(json.tools, 'tools')}
                 </div>
             </div>
         </div>
@@ -55,6 +56,37 @@ const createFeaturedTag = (newTag) => {
 
     return tag;
 };
+
+const createButtons = (component, type) => {
+    let post = '';
+    if (component) {
+        if (Array.isArray(component)) {
+            component.forEach(element => {
+                if (type == 'languages') {
+                    post += `<button class="languages"> ${element}</button>`
+                }
+                if (type == 'tools') {
+                    post += `<button class="tools"> ${element}</button>`
+                }
+            });
+            return post;
+        }
+        else if (type == 'role') {
+            let post = '';
+            post = `<button class="role"> ${component}</button>`
+            return post;
+        }
+        else if (type == 'level') {
+            let post = '';
+            post = `<button class="level"> ${component}</button>`
+            return post;
+        }
+    }
+}
+
+
+
+
 
     // "id": 9,
     // "company": "Eyecam Co.",
