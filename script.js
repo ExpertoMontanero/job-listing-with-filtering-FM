@@ -92,6 +92,7 @@ const cardBorder = (featured) => {
     }
 };
 //FILTER BAR CREATION
+var activeFilters=[];
 var filterBarCreated = false;
 var parentSection = $('#filter-section');
 $('#main-section').on('click', '.filter-button', function () {
@@ -106,14 +107,15 @@ $('#main-section').on('click', '.filter-button', function () {
 <button id="clear-btn">Clear</button>
 </div> `)
         filterBarCreated = true;
-    
+        activeFilters.push(this.textContent);
     }
     //preventing multiplying same filters
     if (!($('.filter-item-text').filter(`:contains('${this.textContent}')`).length > 0)) {
         $('#buttons-bar').append(`<div class="filter-item">
         <p class="filter-item-text">${this.textContent}</p>
         <button class="delete-filter-btn"></button>
-    </div>`)
+    </div>`) 
+    activeFilters.push(this.textContent);
     }
 });
 
@@ -130,5 +132,22 @@ $('#filter-section').on('click', '.delete-filter-btn', function () {
 $('#filter-section').on('click', '#clear-btn', function () {
     $('#filter-bar').remove();
     filterBarCreated = false;
+    activeFilters=[];
 });
 
+//ACTUALL FILTERING
+
+//applying filter
+
+$('#main-section').on('click', '.filter-button', function () {
+    var element = $(`.right-part:not(:contains(${this.textContent}))`);
+    (element).closest($('.box')).hide();
+});
+
+//removing filter
+//ASKKKKKK!!!!!!!!
+$('#filter-section').on('click', '.delete-filter-btn', function () {
+
+   activeFilters.splice(activeFilters.indexOf(`${$(this).siblings('.filter-item-text').text()}`), 1);
+   console.log(activeFilters);
+});
