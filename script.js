@@ -91,4 +91,44 @@ const cardBorder = (featured) => {
         return "featured-border";
     }
 };
+//FILTER BAR CREATION
+var filterBarCreated = false;
+var parentSection = $('#filter-section');
+$('#main-section').on('click', '.filter-button', function () {
+    if (filterBarCreated == false) {
+        $('#filter-section').append(`<div id="filter-bar">
+<div id="buttons-bar">
+<div class="filter-item">
+    <p class="filter-item-text">${this.textContent}</p>
+    <button class="delete-filter-btn"></button>
+</div>
+</div>
+<button id="clear-btn">Clear</button>
+</div> `)
+        filterBarCreated = true;
+    
+    }
+    //preventing multiplying same filters
+    if (!($('.filter-item-text').filter(`:contains('${this.textContent}')`).length > 0)) {
+        $('#buttons-bar').append(`<div class="filter-item">
+        <p class="filter-item-text">${this.textContent}</p>
+        <button class="delete-filter-btn"></button>
+    </div>`)
+    }
+});
+
+//deleting button or whole filter bar if the number of filter buttons is 0
+$('#filter-section').on('click', '.delete-filter-btn', function () {
+    $(this).parent().remove();
+    if (!$('#buttons-bar').has($('.filter-item')).length > 0) {
+        $('#filter-bar').remove();
+        filterBarCreated = false;
+    }
+});
+
+//clear button 
+$('#filter-section').on('click', '#clear-btn', function () {
+    $('#filter-bar').remove();
+    filterBarCreated = false;
+});
 
