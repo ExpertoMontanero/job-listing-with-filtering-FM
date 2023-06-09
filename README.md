@@ -21,6 +21,9 @@ Users should be able to:
 - Filter job listings based on the categories
 
 ### Screenshot
+<img width="942" alt="1" src="https://github.com/ExpertoMontanero/job-listing-with-filtering-FM/assets/103272474/e33a8d96-d40b-426a-ac5a-651c379d62d6">
+<img width="951" alt="2" src="https://github.com/ExpertoMontanero/job-listing-with-filtering-FM/assets/103272474/652860d1-a1cb-49b1-8e89-460ea3a12ab2">
+<img width="360" alt="3" src="https://github.com/ExpertoMontanero/job-listing-with-filtering-FM/assets/103272474/f01f56fb-b5fe-494d-be89-ee1caa3e272d">
 
 ### Links
 
