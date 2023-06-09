@@ -92,7 +92,7 @@ const cardBorder = (featured) => {
     }
 };
 //FILTER BAR CREATION
-var activeFilters=[];
+var activeFilters = [];
 var filterBarCreated = false;
 var parentSection = $('#filter-section');
 $('#main-section').on('click', '.filter-button', function () {
@@ -114,8 +114,8 @@ $('#main-section').on('click', '.filter-button', function () {
         $('#buttons-bar').append(`<div class="filter-item">
         <p class="filter-item-text">${this.textContent}</p>
         <button class="delete-filter-btn"></button>
-    </div>`) 
-    activeFilters.push(this.textContent);
+    </div>`)
+        activeFilters.push(this.textContent);
     }
 });
 
@@ -132,7 +132,7 @@ $('#filter-section').on('click', '.delete-filter-btn', function () {
 $('#filter-section').on('click', '#clear-btn', function () {
     $('#filter-bar').remove();
     filterBarCreated = false;
-    activeFilters=[];
+    activeFilters = [];
 });
 
 //ACTUALL FILTERING
@@ -145,9 +145,22 @@ $('#main-section').on('click', '.filter-button', function () {
 });
 
 //removing filter
-//ASKKKKKK!!!!!!!!
 $('#filter-section').on('click', '.delete-filter-btn', function () {
-
-   activeFilters.splice(activeFilters.indexOf(`${$(this).siblings('.filter-item-text').text()}`), 1);
-   console.log(activeFilters);
+    activeFilters.splice(activeFilters.indexOf(`${$(this).siblings('.filter-item-text').text()}`), 1);
+    $('.box').each(function (index, element) {
+        var currentElement = $(element);
+        doesElementContainAll(currentElement.find('.filter-button'), activeFilters);
+    });
 });
+
+//showing boxes when removing filters function
+function doesElementContainAll(element, arr) {
+    var filtr = $(element.text().split(" ")).toArray();
+    const array = arr.map(elements => elements.trim());
+    for (var i = 0; i < array.length; i++) {
+        if (!filtr.includes(`${array[i]}`)) {
+            return false;
+        }
+    }
+    element.closest('.box').css('display', 'block');
+}
