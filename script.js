@@ -131,6 +131,7 @@ $('#filter-section').on('click', '.delete-filter-btn', function () {
 //clear button 
 $('#filter-section').on('click', '#clear-btn', function () {
     $('#filter-bar').remove();
+    $('.box').show();
     filterBarCreated = false;
     activeFilters = [];
 });
