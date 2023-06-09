@@ -9,8 +9,6 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
   - [Links](#links)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-- [Author](#author)
-
 
 ### The challenge
 
@@ -27,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/json-files-handling-dom-on-change-updating-flexbox-jquerry-tcUyHlbSfI]
+- Live Site URL: [https://expertomontanero.github.io/job-listing-with-filtering-FM/]
 
 
 ### Built with
@@ -41,9 +39,3 @@ Users should be able to:
 ### What I learned
 
 Json file handling and on change DOM elements updating. 
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
